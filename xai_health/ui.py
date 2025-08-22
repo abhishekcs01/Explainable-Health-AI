@@ -94,7 +94,7 @@ def build_interface(model, scaler, shap_explainer, lime_explainer):
                     f"{ci_low:.2f}% - {ci_high:.2f}%"
                 )
 
-            predict_btn = gr.Button("🔍 Predict Heart Disease Risk")
+            predict_btn = gr.Button("🔍 Predict Heart Disease Risk", variant="primary")
             predict_btn.click(
                 fn=_predict,
                 inputs=[age, gender, height, weight, systolic, diastolic, cholesterol, glucose, smoking, alcohol, activity],

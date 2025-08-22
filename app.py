@@ -48,7 +48,7 @@ def cmd_serve(host: str, port: int):
     shap_explainer, lime_explainer = build_explainers(model, X_train, F.FEATURES)
     app = build_interface(model, scaler, shap_explainer, lime_explainer)
     app.queue()
-    app.launch(server_name=host, server_port=port)
+    app.launch(server_name=host, server_port=port, share=False, show_api=False)
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description="Explainable AI for Heart Disease Risk")

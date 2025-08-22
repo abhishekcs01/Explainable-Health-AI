@@ -19,25 +19,28 @@ An end‑to‑end, **explainable** ML app for estimating heart disease risk with
 ## 📁 Repo Structure
 
 ```
-xai-healthcare/
-├─ app.py                         # CLI entrypoint: train/evaluate/serve
+Explainable-Health-AI/
+├─ app.py # CLI entrypoint: train/evaluate/serve
 ├─ requirements.txt
 ├─ README.md
 ├─ .gitignore
 ├─ data/
-│  └─ heartdisease_data.csv       # (Put your dataset here)
+│ ├─ heartdisease_data.csv # (Put your dataset here)
+│ ├─ confusion_matrix.png # Model evaluation result
+│ ├─ dashboard.png # Screenshot of Gradio dashboard
+│ └─ methodology.png # Methodology flowchart
 ├─ xai_health/
-│  ├─ __init__.py
-│  ├─ config.py                   # Paths, hyperparams, flags
-│  ├─ data.py                     # Load & validate data
-│  ├─ features.py                 # Feature engineering + scaling
-│  ├─ model.py                    # Train & evaluate XGBoost
-│  ├─ explain.py                  # SHAP/LIME builders and plots
-│  ├─ recommendations.py          # Health guidance helpers
-│  ├─ ui.py                       # Gradio Blocks interface
-│  └─ utils.py                    # Logging and helpers
+│ ├─ init.py
+│ ├─ config.py # Paths, hyperparams, flags
+│ ├─ data.py # Load & validate data
+│ ├─ features.py # Feature engineering + scaling
+│ ├─ model.py # Train & evaluate XGBoost
+│ ├─ explain.py # SHAP/LIME builders and plots
+│ ├─ recommendations.py # Health guidance helpers
+│ ├─ ui.py # Gradio Blocks interface
+│ └─ utils.py # Logging and helpers
 └─ tests/
-   └─ test_smoke.py               # Basic import & run smoke tests
+└─ test_smoke.py # Basic import & run smoke tests
 ```
 
 ---
@@ -127,6 +130,29 @@ Basic smoke tests ensure modules import and minimal flows run.
 ```bash
 pytest -q
 ```
+
+---
+
+## 🔄 Methodology Flowchart
+The end-to-end methodology for this project:
+
+![Methodology](data/Methodology.png)
+
+---
+
+## 🎥 Demo
+
+### 🔹 Model Evaluation
+Accuracy, AUC, classification report, and confusion matrix:
+
+![Confusion Matrix](data/confusion_matrix.png)
+
+---
+
+### 🔹 Interactive Dashboard
+The Gradio-based healthcare dashboard with SHAP and LIME explanations:
+
+![Healthcare Dashboard](data/dashboard.png)
 
 ---
 
